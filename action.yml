@@ -1,0 +1,37 @@
+name: 'Download asset from release'
+description: 'Downloads an asset from a repository release'
+branding:
+  icon: 'arrow-down'
+  color: 'orange'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
+
+inputs:
+  repository:
+    description: 'The repository to fetch releases from'
+    required: false
+    default: ${{ github.repository }}
+  excludes:
+    description: 'The release types to exclude'
+    required: false
+  tag:
+    description: 'The full/substring release tag'
+    required: false
+  asset:
+    description: 'The full/substring name of the asset to download'
+    required: true
+  target:
+    description: 'The target path to save the asset at'
+    required: false
+    default: '.'
+  token:
+    description: 'The personal access token (PAT) used to download the asset'
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  name:
+    description: >
+      The downloaded asset's full name
