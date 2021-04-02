@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - id: latest_asset
-        uses: MrOctopus/download-asset-action@master
+        uses: MrOctopus/download-asset-action@main
         with:
           repository: microsoft/DirectXTex
           excludes: prerelease, draft
@@ -62,7 +62,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - id: latest_asset
-        uses: MrOctopus/download-asset-action@master
+        uses: MrOctopus/download-asset-action@main
         with:
           repository: fireundubh/pyro
           asset: pyro
