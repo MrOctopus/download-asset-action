@@ -10,17 +10,17 @@ is supported as long as you specify a PAT token with
 the necessary permissions.
 
 NOTE:
-Both windows and ubuntu containers are supported.
+All runners are supported.
 
 ## Inputs
 | Input      | Description                                                | Required | Default                  |
 |------------|------------------------------------------------------------|----------|--------------------------|
-| repository | The repository to download from                            | No       | ${{ github.repository }} |
-| tag        | The full/substring release tag                             | No       | Latest                   |
+| repository | The repository to download from                            | No       | github.repository        |
 | excludes   | The release types to exclude                               | No       | None                     |
+| tag        | The full/substring release tag                             | No       | Latest                   |
 | asset      | The full/substring name of the asset to download           | Yes      |                          |
 | target     | The target path to save the asset at                       | No       | .                        |
-| token      | The personal access token (PAT) used to download the asset | No       | ${{ github.token }}      |
+| token      | The personal access token (PAT) used to download the asset | No       | github.token             |
 
 ## Outputs
 | Ouput | Description                      |
@@ -65,7 +65,6 @@ jobs:
         uses: MrOctopus/download-asset-action@master
         with:
           repository: fireundubh/pyro
-          excludes: draft
           asset: pyro
 
       - run: 7z e ${Env:file_name} -opyro
