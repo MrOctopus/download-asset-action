@@ -67,7 +67,7 @@ jobs:
           repository: fireundubh/pyro
           asset: pyro
 
-      - run: 7z e ${Env:file_name} -opyro
+      - run: 7z x ${Env:file_name} -opyro
         env: 
           file_name: ${{ steps.latest_asset.outputs.name }}
 
