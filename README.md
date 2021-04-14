@@ -74,4 +74,4 @@ jobs:
 ```
 
 ## License
-The scripts and documentation in this project are released under the [GPL-3.0 License](LICENSE)
+The scripts and documentation in this project are released under the [MIT License](LICENSE.md)
